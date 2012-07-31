@@ -1,0 +1,3 @@
+class Canvas::SISImport
+end
+

@@ -1,0 +1,3 @@
+class Canvas::User
+end
+

@@ -1,0 +1,3 @@
+class Canvas::DiscussionTopic
+end
+
