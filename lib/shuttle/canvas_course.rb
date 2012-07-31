@@ -4,7 +4,7 @@ class Canvas::Course
       instance_variable_set("@#{k}", v) unless v.nil?
     end
   end
-rspec 
+
   attr_accessor :name
   attr_accessor :course_code
   attr_accessor :starts_at
