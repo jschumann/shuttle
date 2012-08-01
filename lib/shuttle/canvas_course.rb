@@ -1,3 +1,5 @@
+require 'time'
+
 class Canvas::Course
   def initialize(*args)
     args.each do |k,v|
@@ -5,11 +7,8 @@ class Canvas::Course
     end
   end
 
-  attr_accessor :start_at
-  attr_accessor :end_at
-
   def account_id=(account_id)
-    raise TypeError, "account_id must be an integer" unless account_id.is_a? Integer
+    raise ArgumentError, "account_id must be an integer" unless account_id.is_a? Integer
     @account_id = account_id
   end
   def account_id
@@ -17,7 +16,7 @@ class Canvas::Course
   end
 
   def name=(name)
-    raise TypeError, "name must be a string" unless name.is_a? String
+    raise ArgumentError, "name must be a string" unless name.is_a? String
     @name = name
   end
   def name
@@ -25,15 +24,29 @@ class Canvas::Course
   end
 
   def course_code=(course_code)
-    raise TypeError, "course_code must be a string" unless course_code.is_a? String
+    raise ArgumentError, "course_code must be a string" unless course_code.is_a? String
     @course_code = course_code
   end
   def course_code
     @course_code.to_s
   end
 
+  def start_at=(start_at)
+    @start_at = Time.iso8601(start_at)
+  end
+  def start_at
+    @start_at.iso8601
+  end
+
+  def end_at=(end_at)
+    @end_at = Time.iso8601(end_at)
+  end
+  def end_at
+    @end_at.iso8601
+  end
+
   def license=(license)
-    raise TypeError, "license must be a string" unless license.is_a? String
+    raise ArgumentError, "license must be a string" unless license.is_a? String
     @license = license
   end
   def license
@@ -41,7 +54,7 @@ class Canvas::Course
   end
 
   def is_public=(is_public)
-    raise TypeError, "is_public must be a boolean" unless (is_public.is_a? TrueClass or is_public.is_a? FalseClass)
+    raise ArgumentError, "is_public must be a boolean" unless (is_public.is_a? TrueClass or is_public.is_a? FalseClass)
     @is_public = is_public
   end
   def is_public
@@ -49,7 +62,7 @@ class Canvas::Course
   end
 
   def public_description=(public_description)
-    raise TypeError, "public_description must be a string" unless public_description.is_a? String
+    raise ArgumentError, "public_description must be a string" unless public_description.is_a? String
     @public_description = public_description
   end
   def public_description
@@ -57,7 +70,7 @@ class Canvas::Course
   end
 
   def allow_student_wiki_edits=(allow_student_wiki_edits)
-    raise TypeError, "allow_student_wiki_edits must be a boolean" unless (allow_student_wiki_edits.is_a? TrueClass or allow_student_wiki_edits.is_a? FalseClass)
+    raise ArgumentError, "allow_student_wiki_edits must be a boolean" unless (allow_student_wiki_edits.is_a? TrueClass or allow_student_wiki_edits.is_a? FalseClass)
     @allow_student_wiki_edits = allow_student_wiki_edits
   end
   def allow_student_wiki_edits
@@ -65,7 +78,7 @@ class Canvas::Course
   end
 
   def allow_student_assignment_edits=(allow_student_assignment_edits)
-    raise TypeError, "allow_student_assignment_edits must be a boolean" unless (allow_student_assignment_edits.is_a? TrueClass or allow_student_assignment_edits.is_a? FalseClass)
+    raise ArgumentError, "allow_student_assignment_edits must be a boolean" unless (allow_student_assignment_edits.is_a? TrueClass or allow_student_assignment_edits.is_a? FalseClass)
     @allow_student_assignment_edits = allow_student_assignment_edits
   end
   def allow_student_assignment_edits
@@ -73,7 +86,7 @@ class Canvas::Course
   end
 
   def allow_wiki_comments=(allow_wiki_comments)
-    raise TypeError, "allow_wiki_comments must be a boolean" unless (allow_wiki_comments.is_a? TrueClass or allow_wiki_comments.is_a? FalseClass)
+    raise ArgumentError, "allow_wiki_comments must be a boolean" unless (allow_wiki_comments.is_a? TrueClass or allow_wiki_comments.is_a? FalseClass)
     @allow_wiki_comments = allow_wiki_comments
   end
   def allow_wiki_comments
@@ -81,7 +94,7 @@ class Canvas::Course
   end
 
   def allow_student_forum_attachments=(allow_student_forum_attachments)
-    raise TypeError, "allow_student_forum_attachments must be a boolean" unless (allow_student_forum_attachments.is_a? TrueClass or allow_student_forum_attachments.is_a? FalseClass)
+    raise ArgumentError, "allow_student_forum_attachments must be a boolean" unless (allow_student_forum_attachments.is_a? TrueClass or allow_student_forum_attachments.is_a? FalseClass)
     @allow_student_forum_attachments = allow_student_forum_attachments
   end
   def allow_student_forum_attachments
@@ -89,7 +102,7 @@ class Canvas::Course
   end
 
   def open_enrollment=(open_enrollment)
-    raise TypeError, "open_enrollment must be a boolean" unless (open_enrollment.is_a? TrueClass or open_enrollment.is_a? FalseClass)
+    raise ArgumentError, "open_enrollment must be a boolean" unless (open_enrollment.is_a? TrueClass or open_enrollment.is_a? FalseClass)
     @open_enrollment = open_enrollment
   end
   def open_enrollment
@@ -97,7 +110,7 @@ class Canvas::Course
   end
 
   def self_enrollment=(self_enrollment)
-    raise TypeError, "self_enrollment must be a boolean" unless (self_enrollment.is_a? TrueClass or self_enrollment.is_a? FalseClass)
+    raise ArgumentError, "self_enrollment must be a boolean" unless (self_enrollment.is_a? TrueClass or self_enrollment.is_a? FalseClass)
     @self_enrollment = self_enrollment
   end
   def self_enrollment
@@ -105,7 +118,7 @@ class Canvas::Course
   end
 
   def restrict_enrollments_to_course_dates=(restrict_enrollments_to_course_dates)
-    raise TypeError, "restrict_enrollments_to_course_dates must be a boolean" unless (restrict_enrollments_to_course_dates.is_a? TrueClass or restrict_enrollments_to_course_dates.is_a? FalseClass)
+    raise ArgumentError, "restrict_enrollments_to_course_dates must be a boolean" unless (restrict_enrollments_to_course_dates.is_a? TrueClass or restrict_enrollments_to_course_dates.is_a? FalseClass)
     @restrict_enrollments_to_course_dates = restrict_enrollments_to_course_dates
   end
   def restrict_enrollments_to_course_dates
@@ -113,7 +126,7 @@ class Canvas::Course
   end
 
   def enroll_me=(enroll_me)
-    raise TypeError, "enroll_me must be a boolean" unless (enroll_me.is_a? TrueClass or enroll_me.is_a? FalseClass)
+    raise ArgumentError, "enroll_me must be a boolean" unless (enroll_me.is_a? TrueClass or enroll_me.is_a? FalseClass)
     @enroll_me = enroll_me
   end
   def enroll_me
@@ -121,7 +134,7 @@ class Canvas::Course
   end
 
   def sis_course_id=(sis_course_id)
-    raise TypeError, "sis_course_id must be a string" unless sis_course_id.is_a? String
+    raise ArgumentError, "sis_course_id must be a string" unless sis_course_id.is_a? String
     @sis_course_id = sis_course_id
   end
   def sis_course_id
@@ -129,7 +142,7 @@ class Canvas::Course
   end
 
   def offer=(offer)
-    raise TypeError, "offer must be a boolean" unless (offer.is_a? TrueClass or offer.is_a? FalseClass)
+    raise ArgumentError, "offer must be a boolean" unless (offer.is_a? TrueClass or offer.is_a? FalseClass)
     @offer = offer
   end
   def offer
