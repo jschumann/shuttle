@@ -36,8 +36,8 @@ FactoryGirl.define do
     account_id 1
     name 'name'
     course_code 'course_code'
-    starts_at 'string'
-    ends_at 'string'
+    start_at 'string'
+    end_at 'string'
     license 'license'
     is_public true
     public_description 'public_description'
