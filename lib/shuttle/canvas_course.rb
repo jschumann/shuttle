@@ -57,12 +57,6 @@ class Canvas::Course
 
   # @!attribute license
   #   @return [String] The name of the licensing. 
-  #     Should be one of the following abbreviations (a descriptive name is included 
-  #     in parenthesis for reference): ‘private’ (Private Copyrighted); ‘cc_by_nc_nd’ 
-  #     (CC Attribution Non-Commercial No Derivatives); ‘cc_by_nc_sa’ (CC Attribution 
-  #     Non-Commercial Share Alike); ‘cc_by_nc’ (CC Attribution Non-Commercial); 
-  #     ‘cc_by_nd’ (CC Attribution No Derivatives); ‘cc_by_sa’ (CC Attribution Share 
-  #     Alike); ‘cc_by’ (CC Attribution); ‘public_domain’ (Public Domain).
   def license=(license)
     raise ArgumentError, "license must be a string" unless license.is_a? String
     @license = license
