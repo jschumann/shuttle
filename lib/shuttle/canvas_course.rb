@@ -7,6 +7,8 @@ class Canvas::Course
     end
   end
 
+  # @!attribute account_id
+  #   @return [Integer] The unique ID of the account to which the course belongs
   def account_id=(account_id)
     raise ArgumentError, "account_id must be an integer" unless account_id.is_a? Integer
     @account_id = account_id
@@ -15,6 +17,8 @@ class Canvas::Course
     @account_id.to_i
   end
 
+  # @!attribute name
+  #   @return [String] The name of the course
   def name=(name)
     raise ArgumentError, "name must be a string" unless name.is_a? String
     @name = name
@@ -23,6 +27,8 @@ class Canvas::Course
     @name.to_s
   end
 
+  # @!attribute course_code
+  #   @return [String] The course code for the course
   def course_code=(course_code)
     raise ArgumentError, "course_code must be a string" unless course_code.is_a? String
     @course_code = course_code
@@ -31,6 +37,8 @@ class Canvas::Course
     @course_code.to_s
   end
 
+  # @!attribute start_at
+  #   @return [Datetime] Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z
   def start_at=(start_at)
     @start_at = Time.iso8601(start_at)
   end
@@ -38,6 +46,8 @@ class Canvas::Course
     @start_at.iso8601
   end
 
+  # @!attribute end_at
+  #   @return [Datetime] Course end date in ISO8601 format. e.g. 2011-01-01T01:00Z
   def end_at=(end_at)
     @end_at = Time.iso8601(end_at)
   end
@@ -45,6 +55,14 @@ class Canvas::Course
     @end_at.iso8601
   end
 
+  # @!attribute license
+  #   @return [String] The name of the licensing. 
+  #     Should be one of the following abbreviations (a descriptive name is included 
+  #     in parenthesis for reference): ‘private’ (Private Copyrighted); ‘cc_by_nc_nd’ 
+  #     (CC Attribution Non-Commercial No Derivatives); ‘cc_by_nc_sa’ (CC Attribution 
+  #     Non-Commercial Share Alike); ‘cc_by_nc’ (CC Attribution Non-Commercial); 
+  #     ‘cc_by_nd’ (CC Attribution No Derivatives); ‘cc_by_sa’ (CC Attribution Share 
+  #     Alike); ‘cc_by’ (CC Attribution); ‘public_domain’ (Public Domain).
   def license=(license)
     raise ArgumentError, "license must be a string" unless license.is_a? String
     @license = license
@@ -53,6 +71,8 @@ class Canvas::Course
     @license.to_s
   end
 
+  # @!attribute is_public
+  #   @return [Boolean] Set to true if course is public.
   def is_public=(is_public)
     raise ArgumentError, "is_public must be a boolean" unless (is_public.is_a? TrueClass or is_public.is_a? FalseClass)
     @is_public = is_public
@@ -175,5 +195,32 @@ class Canvas::Course
     }.to_json
     Canvas::Request.new(api_method, api_endpoint, api_request_body)
   end
+
+  #def copy
+  #end
+
+  #def save
+  #end
+
+  #def find_or_create
+  #end
+
+  #def find_or_new
+  #end
+
+  #def update
+  #end
+
+  #def destroy
+  #end
+
+  #def get_by_id
+  #end
+
+  #def get_by_sis
+  #end
+
+  #def all
+  #end
 end
 
