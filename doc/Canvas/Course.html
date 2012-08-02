@@ -1,0 +1,2473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Canvas::Course
+  
+    &mdash; Documentation by YARD 0.8.2.1
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Canvas.html" title="Canvas (module)">Canvas</a></span></span>
+     &raquo; 
+    <span class="title">Course</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Canvas::Course
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Canvas::Course</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/shuttle/canvas_course.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#account_id-instance_method" title="#account_id (instance method)">- (Integer) <strong>account_id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The unique ID of the account to which the course belongs.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#course_code-instance_method" title="#course_code (instance method)">- (String) <strong>course_code</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The course code for the course.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_at-instance_method" title="#end_at (instance method)">- (Datetime) <strong>end_at</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Course end date in ISO8601 format.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_public-instance_method" title="#is_public (instance method)">- (Boolean) <strong>is_public</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set to true if course is public.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">- (String) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name of the course.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_at-instance_method" title="#start_at (instance method)">- (Datetime) <strong>start_at</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Course start date in ISO8601 format, e.g.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_assignment_edits-instance_method" title="#allow_student_assignment_edits (instance method)">- (Object) <strong>allow_student_assignment_edits</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_assignment_edits%3D-instance_method" title="#allow_student_assignment_edits= (instance method)">- (Object) <strong>allow_student_assignment_edits=</strong>(allow_student_assignment_edits) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_forum_attachments-instance_method" title="#allow_student_forum_attachments (instance method)">- (Object) <strong>allow_student_forum_attachments</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_forum_attachments%3D-instance_method" title="#allow_student_forum_attachments= (instance method)">- (Object) <strong>allow_student_forum_attachments=</strong>(allow_student_forum_attachments) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_wiki_edits-instance_method" title="#allow_student_wiki_edits (instance method)">- (Object) <strong>allow_student_wiki_edits</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_student_wiki_edits%3D-instance_method" title="#allow_student_wiki_edits= (instance method)">- (Object) <strong>allow_student_wiki_edits=</strong>(allow_student_wiki_edits) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_wiki_comments-instance_method" title="#allow_wiki_comments (instance method)">- (Object) <strong>allow_wiki_comments</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_wiki_comments%3D-instance_method" title="#allow_wiki_comments= (instance method)">- (Object) <strong>allow_wiki_comments=</strong>(allow_wiki_comments) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong>(username, message = &quot;Quit&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new course.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enroll_me-instance_method" title="#enroll_me (instance method)">- (Object) <strong>enroll_me</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enroll_me%3D-instance_method" title="#enroll_me= (instance method)">- (Object) <strong>enroll_me=</strong>(enroll_me) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Course) <strong>initialize</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of Course.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#license-instance_method" title="#license (instance method)">- (Object) <strong>license</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#license%3D-instance_method" title="#license= (instance method)">- (Object) <strong>license=</strong>(license) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#offer-instance_method" title="#offer (instance method)">- (Object) <strong>offer</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#offer%3D-instance_method" title="#offer= (instance method)">- (Object) <strong>offer=</strong>(offer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open_enrollment-instance_method" title="#open_enrollment (instance method)">- (Object) <strong>open_enrollment</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open_enrollment%3D-instance_method" title="#open_enrollment= (instance method)">- (Object) <strong>open_enrollment=</strong>(open_enrollment) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_description-instance_method" title="#public_description (instance method)">- (Object) <strong>public_description</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_description%3D-instance_method" title="#public_description= (instance method)">- (Object) <strong>public_description=</strong>(public_description) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#restrict_enrollments_to_course_dates-instance_method" title="#restrict_enrollments_to_course_dates (instance method)">- (Object) <strong>restrict_enrollments_to_course_dates</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#restrict_enrollments_to_course_dates%3D-instance_method" title="#restrict_enrollments_to_course_dates= (instance method)">- (Object) <strong>restrict_enrollments_to_course_dates=</strong>(restrict_enrollments_to_course_dates) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#self_enrollment-instance_method" title="#self_enrollment (instance method)">- (Object) <strong>self_enrollment</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#self_enrollment%3D-instance_method" title="#self_enrollment= (instance method)">- (Object) <strong>self_enrollment=</strong>(self_enrollment) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sis_course_id-instance_method" title="#sis_course_id (instance method)">- (Object) <strong>sis_course_id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sis_course_id%3D-instance_method" title="#sis_course_id= (instance method)">- (Object) <strong>sis_course_id=</strong>(sis_course_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Canvas::Course (class)">Course</a></span></tt>) <strong>initialize</strong>(*args) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A new instance of Course</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 4</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='rubyid_args identifier id'>args</span><span class='rparen token'>)</span>
+  <span class='rubyid_args identifier id'>args</span><span class='dot token'>.</span><span class='rubyid_each identifier id'>each</span> <span class='rubyid_do do kw'>do</span> <span class='bitor op'>|</span><span class='rubyid_k identifier id'>k</span><span class='comma token'>,</span><span class='rubyid_v identifier id'>v</span><span class='bitor op'>|</span>
+    <span class='rubyid_instance_variable_set identifier id'>instance_variable_set</span><span class='lparen token'>(</span><span class='dstring node'>&quot;@#{k}&quot;</span><span class='comma token'>,</span> <span class='rubyid_v identifier id'>v</span><span class='rparen token'>)</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_v identifier id'>v</span><span class='dot token'>.</span><span class='rubyid_nil? fid id'>nil?</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="account_id=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="account_id-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>account_id</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The unique ID of the account to which the course belongs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The unique ID of the account to which the course belongs</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 12</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_account_id= identifier id'>account_id=</span><span class='lparen token'>(</span><span class='rubyid_account_id identifier id'>account_id</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;account_id must be an integer&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_account_id identifier id'>account_id</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_Integer constant id'>Integer</span>
+  <span class='rubyid_@account_id ivar id'>@account_id</span> <span class='assign token'>=</span> <span class='rubyid_account_id identifier id'>account_id</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="course_code=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="course_code-instance_method">
+  
+    - (<tt>String</tt>) <strong>course_code</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The course code for the course</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The course code for the course</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 32</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_course_code= identifier id'>course_code=</span><span class='lparen token'>(</span><span class='rubyid_course_code identifier id'>course_code</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;course_code must be a string&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_course_code identifier id'>course_code</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_String constant id'>String</span>
+  <span class='rubyid_@course_code ivar id'>@course_code</span> <span class='assign token'>=</span> <span class='rubyid_course_code identifier id'>course_code</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="end_at=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="end_at-instance_method">
+  
+    - (<tt>Datetime</tt>) <strong>end_at</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Course end date in ISO8601 format. e.g. 2011-01-01T01:00Z</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Datetime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Course end date in ISO8601 format. e.g. 2011-01-01T01:00Z</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 51</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_end_at= identifier id'>end_at=</span><span class='lparen token'>(</span><span class='rubyid_end_at identifier id'>end_at</span><span class='rparen token'>)</span>
+  <span class='rubyid_@end_at ivar id'>@end_at</span> <span class='assign token'>=</span> <span class='rubyid_Time constant id'>Time</span><span class='dot token'>.</span><span class='rubyid_iso8601 identifier id'>iso8601</span><span class='lparen token'>(</span><span class='rubyid_end_at identifier id'>end_at</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="is_public=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="is_public-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>is_public</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set to true if course is public.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Set to true if course is public.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 68</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_is_public= identifier id'>is_public=</span><span class='lparen token'>(</span><span class='rubyid_is_public identifier id'>is_public</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;is_public must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_is_public identifier id'>is_public</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_is_public identifier id'>is_public</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@is_public ivar id'>@is_public</span> <span class='assign token'>=</span> <span class='rubyid_is_public identifier id'>is_public</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="name=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    - (<tt>String</tt>) <strong>name</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The name of the course</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the course</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 22</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_name= identifier id'>name=</span><span class='lparen token'>(</span><span class='rubyid_name identifier id'>name</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;name must be a string&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_name identifier id'>name</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_String constant id'>String</span>
+  <span class='rubyid_@name ivar id'>@name</span> <span class='assign token'>=</span> <span class='rubyid_name identifier id'>name</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="start_at=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="start_at-instance_method">
+  
+    - (<tt>Datetime</tt>) <strong>start_at</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Datetime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 42</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_start_at= identifier id'>start_at=</span><span class='lparen token'>(</span><span class='rubyid_start_at identifier id'>start_at</span><span class='rparen token'>)</span>
+  <span class='rubyid_@start_at ivar id'>@start_at</span> <span class='assign token'>=</span> <span class='rubyid_Time constant id'>Time</span><span class='dot token'>.</span><span class='rubyid_iso8601 identifier id'>iso8601</span><span class='lparen token'>(</span><span class='rubyid_start_at identifier id'>start_at</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="allow_student_assignment_edits-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_assignment_edits</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 96</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_assignment_edits identifier id'>allow_student_assignment_edits</span>
+  <span class='rubyid_@allow_student_assignment_edits ivar id'>@allow_student_assignment_edits</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_student_assignment_edits=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_assignment_edits=</strong>(allow_student_assignment_edits) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 92</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_assignment_edits= identifier id'>allow_student_assignment_edits=</span><span class='lparen token'>(</span><span class='rubyid_allow_student_assignment_edits identifier id'>allow_student_assignment_edits</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;allow_student_assignment_edits must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_allow_student_assignment_edits identifier id'>allow_student_assignment_edits</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_allow_student_assignment_edits identifier id'>allow_student_assignment_edits</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@allow_student_assignment_edits ivar id'>@allow_student_assignment_edits</span> <span class='assign token'>=</span> <span class='rubyid_allow_student_assignment_edits identifier id'>allow_student_assignment_edits</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_student_forum_attachments-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_forum_attachments</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 112</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_forum_attachments identifier id'>allow_student_forum_attachments</span>
+  <span class='rubyid_@allow_student_forum_attachments ivar id'>@allow_student_forum_attachments</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_student_forum_attachments=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_forum_attachments=</strong>(allow_student_forum_attachments) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 108</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_forum_attachments= identifier id'>allow_student_forum_attachments=</span><span class='lparen token'>(</span><span class='rubyid_allow_student_forum_attachments identifier id'>allow_student_forum_attachments</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;allow_student_forum_attachments must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_allow_student_forum_attachments identifier id'>allow_student_forum_attachments</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_allow_student_forum_attachments identifier id'>allow_student_forum_attachments</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@allow_student_forum_attachments ivar id'>@allow_student_forum_attachments</span> <span class='assign token'>=</span> <span class='rubyid_allow_student_forum_attachments identifier id'>allow_student_forum_attachments</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_student_wiki_edits-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_wiki_edits</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 88</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_wiki_edits identifier id'>allow_student_wiki_edits</span>
+  <span class='rubyid_@allow_student_wiki_edits ivar id'>@allow_student_wiki_edits</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_student_wiki_edits=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_student_wiki_edits=</strong>(allow_student_wiki_edits) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 84</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_student_wiki_edits= identifier id'>allow_student_wiki_edits=</span><span class='lparen token'>(</span><span class='rubyid_allow_student_wiki_edits identifier id'>allow_student_wiki_edits</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;allow_student_wiki_edits must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_allow_student_wiki_edits identifier id'>allow_student_wiki_edits</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_allow_student_wiki_edits identifier id'>allow_student_wiki_edits</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@allow_student_wiki_edits ivar id'>@allow_student_wiki_edits</span> <span class='assign token'>=</span> <span class='rubyid_allow_student_wiki_edits identifier id'>allow_student_wiki_edits</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_wiki_comments-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_wiki_comments</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 104</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_wiki_comments identifier id'>allow_wiki_comments</span>
+  <span class='rubyid_@allow_wiki_comments ivar id'>@allow_wiki_comments</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_wiki_comments=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>allow_wiki_comments=</strong>(allow_wiki_comments) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 100</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_allow_wiki_comments= identifier id'>allow_wiki_comments=</span><span class='lparen token'>(</span><span class='rubyid_allow_wiki_comments identifier id'>allow_wiki_comments</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;allow_wiki_comments must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_allow_wiki_comments identifier id'>allow_wiki_comments</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_allow_wiki_comments identifier id'>allow_wiki_comments</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@allow_wiki_comments ivar id'>@allow_wiki_comments</span> <span class='assign token'>=</span> <span class='rubyid_allow_wiki_comments identifier id'>allow_wiki_comments</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create</strong>(username, message = &quot;Quit&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a new course</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>username</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the username to quit</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>message</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the quit message</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 168</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_create identifier id'>create</span>
+  <span class='rubyid_api_method identifier id'>api_method</span> <span class='assign token'>=</span> <span class='string val'>&quot;POST&quot;</span>
+  <span class='rubyid_api_endpoint identifier id'>api_endpoint</span> <span class='assign token'>=</span> <span class='dstring node'>&quot;/api/v1/accounts/#{self.account_id}/courses&quot;</span>
+  <span class='rubyid_api_request_body identifier id'>api_request_body</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span>
+    <span class='string val'>&quot;account_id&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_account_id&quot;]}&quot;</span><span class='comma token'>,</span>
+    <span class='string val'>&quot;course&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+      <span class='string val'>&quot;name&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_name&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;course_code&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_code&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;start_at&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_starts_at&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;end_at&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_ends_at&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;license&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_license&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;is_public&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_is_public&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;public_description&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_public_description&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;allow_student_wiki_edits&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_allow_student_wiki_edits&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;allow_student_assignment_edits&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_allow_student_assignment_edits&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;allow_wiki_comments&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_allow_wiki_comments&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;allow_student_forum_attachments&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_allow_student_forum_attachments&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;open_enrollment&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_open_enrollment&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;self_enrollment&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_self_enrollment&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;restrict_enrollments_to_course_dates&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_restrict_enrollments_to_course_dates&quot;]}&quot;</span><span class='comma token'>,</span>
+      <span class='string val'>&quot;sis_course_id&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_sis_course_id&quot;]}&quot;</span><span class='comma token'>,</span>
+    <span class='rbrace token'>}</span><span class='comma token'>,</span>
+    <span class='string val'>&quot;offer&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{options[&quot;course_offer&quot;]}&quot;</span><span class='comma token'>,</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='rubyid_to_json identifier id'>to_json</span>
+  <span class='rubyid_Canvas constant id'>Canvas</span><span class='colon2 op'>::</span><span class='rubyid_Request constant id'>Request</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span><span class='lparen token'>(</span><span class='rubyid_api_method identifier id'>api_method</span><span class='comma token'>,</span> <span class='rubyid_api_endpoint identifier id'>api_endpoint</span><span class='comma token'>,</span> <span class='rubyid_api_request_body identifier id'>api_request_body</span><span class='rparen token'>)</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enroll_me-instance_method">
+  
+    - (<tt>Object</tt>) <strong>enroll_me</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 144</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_enroll_me identifier id'>enroll_me</span>
+  <span class='rubyid_@enroll_me ivar id'>@enroll_me</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enroll_me=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>enroll_me=</strong>(enroll_me) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 140</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_enroll_me= identifier id'>enroll_me=</span><span class='lparen token'>(</span><span class='rubyid_enroll_me identifier id'>enroll_me</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;enroll_me must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_enroll_me identifier id'>enroll_me</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_enroll_me identifier id'>enroll_me</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@enroll_me ivar id'>@enroll_me</span> <span class='assign token'>=</span> <span class='rubyid_enroll_me identifier id'>enroll_me</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="license-instance_method">
+  
+    - (<tt>Object</tt>) <strong>license</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 62</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_license identifier id'>license</span>
+  <span class='rubyid_@license ivar id'>@license</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="license=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>license=</strong>(license) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 58</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_license= identifier id'>license=</span><span class='lparen token'>(</span><span class='rubyid_license identifier id'>license</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;license must be a string&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_license identifier id'>license</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_String constant id'>String</span>
+  <span class='rubyid_@license ivar id'>@license</span> <span class='assign token'>=</span> <span class='rubyid_license identifier id'>license</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="offer-instance_method">
+  
+    - (<tt>Object</tt>) <strong>offer</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160
+161
+162</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 160</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_offer identifier id'>offer</span>
+  <span class='rubyid_@offer ivar id'>@offer</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="offer=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>offer=</strong>(offer) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+156
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 156</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_offer= identifier id'>offer=</span><span class='lparen token'>(</span><span class='rubyid_offer identifier id'>offer</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;offer must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_offer identifier id'>offer</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_offer identifier id'>offer</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@offer ivar id'>@offer</span> <span class='assign token'>=</span> <span class='rubyid_offer identifier id'>offer</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open_enrollment-instance_method">
+  
+    - (<tt>Object</tt>) <strong>open_enrollment</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 120</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_open_enrollment identifier id'>open_enrollment</span>
+  <span class='rubyid_@open_enrollment ivar id'>@open_enrollment</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open_enrollment=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>open_enrollment=</strong>(open_enrollment) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 116</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_open_enrollment= identifier id'>open_enrollment=</span><span class='lparen token'>(</span><span class='rubyid_open_enrollment identifier id'>open_enrollment</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;open_enrollment must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_open_enrollment identifier id'>open_enrollment</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_open_enrollment identifier id'>open_enrollment</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@open_enrollment ivar id'>@open_enrollment</span> <span class='assign token'>=</span> <span class='rubyid_open_enrollment identifier id'>open_enrollment</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_description-instance_method">
+  
+    - (<tt>Object</tt>) <strong>public_description</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 80</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_public_description identifier id'>public_description</span>
+  <span class='rubyid_@public_description ivar id'>@public_description</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="public_description=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>public_description=</strong>(public_description) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 76</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_public_description= identifier id'>public_description=</span><span class='lparen token'>(</span><span class='rubyid_public_description identifier id'>public_description</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;public_description must be a string&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_public_description identifier id'>public_description</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_String constant id'>String</span>
+  <span class='rubyid_@public_description ivar id'>@public_description</span> <span class='assign token'>=</span> <span class='rubyid_public_description identifier id'>public_description</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="restrict_enrollments_to_course_dates-instance_method">
+  
+    - (<tt>Object</tt>) <strong>restrict_enrollments_to_course_dates</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 136</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_restrict_enrollments_to_course_dates identifier id'>restrict_enrollments_to_course_dates</span>
+  <span class='rubyid_@restrict_enrollments_to_course_dates ivar id'>@restrict_enrollments_to_course_dates</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="restrict_enrollments_to_course_dates=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>restrict_enrollments_to_course_dates=</strong>(restrict_enrollments_to_course_dates) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 132</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_restrict_enrollments_to_course_dates= identifier id'>restrict_enrollments_to_course_dates=</span><span class='lparen token'>(</span><span class='rubyid_restrict_enrollments_to_course_dates identifier id'>restrict_enrollments_to_course_dates</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;restrict_enrollments_to_course_dates must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_restrict_enrollments_to_course_dates identifier id'>restrict_enrollments_to_course_dates</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_restrict_enrollments_to_course_dates identifier id'>restrict_enrollments_to_course_dates</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@restrict_enrollments_to_course_dates ivar id'>@restrict_enrollments_to_course_dates</span> <span class='assign token'>=</span> <span class='rubyid_restrict_enrollments_to_course_dates identifier id'>restrict_enrollments_to_course_dates</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="self_enrollment-instance_method">
+  
+    - (<tt>Object</tt>) <strong>self_enrollment</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 128</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_self_enrollment identifier id'>self_enrollment</span>
+  <span class='rubyid_@self_enrollment ivar id'>@self_enrollment</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="self_enrollment=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>self_enrollment=</strong>(self_enrollment) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 124</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_self_enrollment= identifier id'>self_enrollment=</span><span class='lparen token'>(</span><span class='rubyid_self_enrollment identifier id'>self_enrollment</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;self_enrollment must be a boolean&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='lparen token'>(</span><span class='rubyid_self_enrollment identifier id'>self_enrollment</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_TrueClass constant id'>TrueClass</span> <span class='rubyid_or or kw'>or</span> <span class='rubyid_self_enrollment identifier id'>self_enrollment</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+  <span class='rubyid_@self_enrollment ivar id'>@self_enrollment</span> <span class='assign token'>=</span> <span class='rubyid_self_enrollment identifier id'>self_enrollment</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sis_course_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sis_course_id</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 152</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_sis_course_id identifier id'>sis_course_id</span>
+  <span class='rubyid_@sis_course_id ivar id'>@sis_course_id</span><span class='dot token'>.</span><span class='rubyid_to_s identifier id'>to_s</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sis_course_id=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>sis_course_id=</strong>(sis_course_id) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/shuttle/canvas_course.rb', line 148</span>
+
+<span class='rubyid_def def kw'>def</span> <span class='rubyid_sis_course_id= identifier id'>sis_course_id=</span><span class='lparen token'>(</span><span class='rubyid_sis_course_id identifier id'>sis_course_id</span><span class='rparen token'>)</span>
+  <span class='rubyid_raise identifier id'>raise</span> <span class='rubyid_ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;sis_course_id must be a string&quot;</span> <span class='rubyid_unless unless_mod kw'>unless</span> <span class='rubyid_sis_course_id identifier id'>sis_course_id</span><span class='dot token'>.</span><span class='rubyid_is_a? fid id'>is_a?</span> <span class='rubyid_String constant id'>String</span>
+  <span class='rubyid_@sis_course_id ivar id'>@sis_course_id</span> <span class='assign token'>=</span> <span class='rubyid_sis_course_id identifier id'>sis_course_id</span>
+<span class='rubyid_end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Aug 02 15:39:54 2012 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.2.1 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
