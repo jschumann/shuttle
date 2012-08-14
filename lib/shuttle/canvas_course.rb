@@ -7,6 +7,16 @@ class Canvas::Course
     end
   end
 
+  # @!attribute id
+  #   @return [Integer] Canvas's unique identifier for the course
+  def id=(id)
+    raise ArgumentError, "id must be an integer" unless id.is_a? Integer
+    @id = id
+  end
+  def id
+    @id.to_i
+  end
+
   # @!attribute account_id
   #   @return [Integer] The unique ID of the account to which the course belongs
   def account_id=(account_id)
@@ -18,7 +28,7 @@ class Canvas::Course
   end
 
   # @!attribute name
-  #   @return [String] The name of the course
+  #   @return [String] The full name of the course
   def name=(name)
     raise ArgumentError, "name must be a string" unless name.is_a? String
     @name = name
@@ -38,7 +48,7 @@ class Canvas::Course
   end
 
   # @!attribute start_at
-  #   @return [Datetime] Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z
+  #   @return [Datetime] Course start date in ISO8601 format, e.g. 2011-01-01T01:00Z, 2012-06-01T00:00:00-06:00
   def start_at=(start_at)
     @start_at = Time.iso8601(start_at)
   end
@@ -53,6 +63,15 @@ class Canvas::Course
   end
   def end_at
     @end_at.iso8601
+  end
+
+  # @!attribute calendar
+  #   @return [String] URL for the course calendar ics. e.g. ics: "https:\/\/canvas.instructure.com\/feeds\/calendars\/course_abcdef.ics"
+  def calendar=(calendar)
+    @calendar = calendar
+  end
+  def calendar
+    @calendar
   end
 
   # @!attribute license
@@ -75,6 +94,8 @@ class Canvas::Course
     @is_public
   end
 
+  # @!attribute public_description
+  #   @return [String] 
   def public_description=(public_description)
     raise ArgumentError, "public_description must be a string" unless public_description.is_a? String
     @public_description = public_description
@@ -147,6 +168,21 @@ class Canvas::Course
     @enroll_me
   end
 
+  // A list of enrollments linking the current user to the course.
+  // for student enrollments, grading information may be included
+  // if include[]=total_scores
+  enrollments: [
+    {
+      type: student,
+      computed_final_score: 41.5,
+      computed_current_score: 90,
+      computed_final_grade: 'A-'
+    }
+  ],
+
+  // the SIS identifier for the course, if defined
+  sis_course_id: null,
+
   def sis_course_id=(sis_course_id)
     raise ArgumentError, "sis_course_id must be a string" unless sis_course_id.is_a? String
     @sis_course_id = sis_course_id
@@ -162,6 +198,14 @@ class Canvas::Course
   def offer
     @offer
   end
+
+  // optional: user-generated HTML for the course syllabus
+  syllabus_body: "<p>syllabus html goes here<\/p>",
+
+  // optional: the number of submissions needing grading
+  // returned only if the current user has grading rights
+  // and include[]=needs_grading_count
+  needs_grading_count: '17'
 
   def create
     api_method = "POST"

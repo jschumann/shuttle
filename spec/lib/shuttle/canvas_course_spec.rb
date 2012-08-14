@@ -9,6 +9,23 @@ describe Canvas::Course do
     FactoryGirl.build(:course)
   end
 
+  it "should have an id attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.should respond_to(:account_id)
+  end
+  it "should require an integer when setting the id attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    expect {@course.account_id = 'string'}.to raise_error(ArgumentError, /account_id must be an integer/)
+    expect {@course.account_id = 1}.to_not raise_error(ArgumentError, /account_id must be an integer/)
+  end
+  it "should return the id attribute as an integer" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.account_id.should be_a_kind_of(Integer)
+  end
+
   it "should have an account_id attribute" do
     @course = FactoryGirl.build(:course)
     @course.should respond_to(:account_id)
@@ -77,6 +94,23 @@ describe Canvas::Course do
   it "should return the end_at attribute as an ISO 8601 date/time" do
     @course = FactoryGirl.build(:course)
     @course.end_at.should match(/^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[0-1][0-9]):[0-5][0-9])?$/i)
+  end
+
+  it "should have a calendar attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.should respond_to(:license)
+  end
+  it "should require a string when setting the calendar attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    expect {@course.license = 1}.to raise_error(ArgumentError, /license must be a string/)
+    expect {@course.license = 'string'}.to_not raise_error(ArgumentError, /license must be a string/)
+  end
+  it "should return the calendar attribute as a string" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.license.should be_an_instance_of(String)
   end
 
   it "should have a license attribute" do
@@ -242,6 +276,32 @@ describe Canvas::Course do
     @course.enroll_me.should be_an_kind_of(Boolean)
   end
 
+  it "should have an enrollments attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.should respond_to(:enroll_me)
+  end
+  it "should require an array when setting the enrollments attribute" do
+    pending
+    @course = FactoryGirl.build(:course)
+    expect {@course.enroll_me = 'string'}.to raise_error(ArgumentError, /enroll_me must be a boolean/)
+    expect {@course.enroll_me = true}.to_not raise_error(ArgumentError, /enroll_me must be a boolean/)
+    expect {@course.enroll_me = false}.to_not raise_error(ArgumentError, /enroll_me must be a boolean/)
+  end
+  it "should return the enrollments attribute as an array" do
+    pending
+    @course = FactoryGirl.build(:course)
+    @course.enroll_me.should be_an_kind_of(Boolean)
+  end
+  # enrollments: [
+  #   {
+  #     type: student,
+  #     computed_final_score: 41.5,
+  #     computed_current_score: 90,
+  #     computed_final_grade: 'A-'
+  #   }
+  # ],
+
   it "should have a sis_course_id attribute" do
     @course = FactoryGirl.build(:course)
     @course.should respond_to(:sis_course_id)
@@ -270,6 +330,14 @@ describe Canvas::Course do
     @course = FactoryGirl.build(:course)
     @course.offer.should be_a_kind_of(Boolean)
   end
+
+  # optional: user-generated HTML for the course syllabus
+  # syllabus_body: "<p>syllabus html goes here<\/p>",
+
+  # optional: the number of submissions needing grading
+  # returned only if the current user has grading rights
+  # and include[]=needs_grading_count
+  # needs_grading_count: '17'
 
   describe "new" do
     it "should take a hash of arguments" do
