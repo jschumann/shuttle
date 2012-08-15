@@ -168,20 +168,20 @@ class Canvas::Course
     @enroll_me
   end
 
-  // A list of enrollments linking the current user to the course.
-  // for student enrollments, grading information may be included
-  // if include[]=total_scores
-  enrollments: [
-    {
-      type: student,
-      computed_final_score: 41.5,
-      computed_current_score: 90,
-      computed_final_grade: 'A-'
-    }
-  ],
+  # A list of enrollments linking the current user to the course.
+  # for student enrollments, grading information may be included
+  # if include[]=total_scores
+  #enrollments: [
+  #  {
+  #    type: student,
+  #    computed_final_score: 41.5,
+  #    computed_current_score: 90,
+  #    computed_final_grade: 'A-'
+  #  }
+  #],
 
-  // the SIS identifier for the course, if defined
-  sis_course_id: null,
+  # the SIS identifier for the course, if defined
+  # sis_course_id: null,
 
   def sis_course_id=(sis_course_id)
     raise ArgumentError, "sis_course_id must be a string" unless sis_course_id.is_a? String
@@ -199,13 +199,13 @@ class Canvas::Course
     @offer
   end
 
-  // optional: user-generated HTML for the course syllabus
-  syllabus_body: "<p>syllabus html goes here<\/p>",
+  # optional: user-generated HTML for the course syllabus
+  # syllabus_body: "<p>syllabus html goes here<\/p>",
 
-  // optional: the number of submissions needing grading
-  // returned only if the current user has grading rights
-  // and include[]=needs_grading_count
-  needs_grading_count: '17'
+  # optional: the number of submissions needing grading
+  # returned only if the current user has grading rights
+  # and include[]=needs_grading_count
+  # needs_grading_count: '17'
 
   def create
     api_method = "POST"
