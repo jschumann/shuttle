@@ -1,2 +1,8 @@
 /Gemfile.lock
 
+# temporary crap i'm working on with no home yet
+models/
+service.rb
+update_canvas_users.rb
+user_update_job.rb
+
