@@ -9,35 +9,35 @@ describe Canvas::User do
     FactoryGirl.build(:user)
   end
 
-  it "should have a create class method" do
+  it "should have a class method 'create'" do
     Canvas::User.should respond_to(:create)
   end
 
-  it "should have an edit class method" do
+  it "should have an class method 'edit'" do
     Canvas::User.should respond_to(:edit)
   end
 
-  it "should have a delete class method" do
+  it "should have a class method 'delete'" do
     Canvas::User.should respond_to(:delete)
   end
 
-  it "should have an all class method" do
+  it "should have a class method 'all'" do
     Canvas::User.should respond_to(:all)
   end
 
-  it "should have a get_by_canvas_id class method" do
+  it "should have a class method 'get_by_canvas_id'" do
     Canvas::User.should respond_to(:get_by_canvas_id)
   end
 
-  it "should have a get_by_sis_id class method" do
+  it "should have a class method 'get_by_sis_id'" do
     Canvas::User.should respond_to(:get_by_sis_id)
   end
 
-  it "should have a get_or_create_by_canvas_id class method" do
+  it "should have a class method 'get_or_create_by_canvas_id'" do
     Canvas::User.should respond_to(:get_or_create_by_canvas_id)
   end
 
-  it "should have a get_or_create_by_sis_id class method" do
+  it "should have a class method 'get_or_create_by_sis_id'" do
     Canvas::User.should respond_to(:get_or_create_by_sis_id)
   end
 
