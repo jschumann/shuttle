@@ -25,16 +25,12 @@ class Canvas::API::Request
     request["Authorization"] = "Bearer #{Canvas::API::TOKEN}"
     request["Content-Type"] = "application/json"
 
-    puts Canvas::API::BaseURI
-    puts Canvas::API::TOKEN
-    puts "Request: " + request.body.to_s
-
     response = http.request(request)
-    puts "Response: " + response.body
-    puts "Response code: " + response.code
+    
+    code = response.code
+    body = JSON.parse(response.body)
+    return Array[code, body]
   end
-
-  #canvas_user = JSON.parse(response.body)
 
 #      if response.code == 200
 #        canvas_users_added += 1

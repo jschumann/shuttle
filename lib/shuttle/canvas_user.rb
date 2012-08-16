@@ -1,10 +1,17 @@
 class Canvas::User
 # API for accessing information on the current and other users.
 
-  attr_accessor :canvas_id, :name, :short_name, :sortable_name, :email, :login_id
+  attr_accessor :id, :name, :short_name, :sortable_name, :primary_email, :login_id
   attr_accessor :sis_user_id, :sis_login_id
   attr_accessor :avatar_url, :calendar, :time_zone, :locale
   attr_accessor :saved
+
+  def initialize(*args)
+    if args.length == 1 && args.first.kind_of?(Hash)
+      args.first.each { |k,v| send("#{k}=",v) }
+    end
+    @saved = false
+  end
 
   def saved?
     return @saved
@@ -42,14 +49,15 @@ class Canvas::User
       },
       "pseudonym" => {
         # User’s login ID.
-        "unique_id" => "#{canvas_user.login_id || canvas_user.email}",
+        "unique_id" => "#{canvas_user.login_id || canvas_user.primary_email}",
         # Optional | Integer | SIS ID for the user’s account. To set this parameter, the caller must be able to manage SIS permissions.
         "sis_user_id" => "#{canvas_user.sis_user_id}",
         # Optional, 0|1 | Integer | Send user notification of account creation if set to 1.
         "send_confirmation" => 0
       }
     }.to_json
-    request.fire!
+    response = request.fire!
+    return response
   end
 
   # @!method edit(canvas_user)
@@ -75,7 +83,8 @@ class Canvas::User
         #TODO user[avatar][url]
       },
     }.to_json
-    request.fire!
+    response = request.fire!
+    return response
   end
 
   # @!method delete(account_id, user_id)
@@ -91,18 +100,23 @@ class Canvas::User
   # @!method save
   #   Save and return a new user and pseudonym for an account.
   def save
-    # call create or edit, passing current object, as appropriate
-    if self.saved?
-      Canvas::User.edit(self)
+    response = Canvas::User.create(2, self)
+    if response[0] == '200'
+      return true
     else
-      Canvas::User.create(self)
+      return false
     end
   end
 
   # @!method update
   #   Modify an existing user. To modify a user’s login, see the documentation for logins.
   def update
-    # update current object's attributes, then call save
+    response = Canvas::User.edit(self)
+    if response[0] == '200'
+      return true
+    else
+      return false
+    end
   end
 
   # @!method destroy
@@ -124,7 +138,10 @@ class Canvas::User
     request = Canvas::API::Request.new
     request.method = 'GET'
     request.endpoint = "/api/v1/users/#{user_id}/profile"
-    return request.fire!
+    response = request.fire!
+    if response[0] == '200'
+      return Canvas::User.new(response[1])
+    end
   end
 
   # @!method get_by_sis_id(sis_id)
@@ -134,7 +151,10 @@ class Canvas::User
     request = Canvas::API::Request.new
     request.method = 'GET'
     request.endpoint = "/api/v1/users/sis_user_id:#{sis_id}/profile"
-    return request.fire!
+    response = request.fire!
+    if response[0] == '200'
+      return Canvas::User.new(response[1])
+    end
   end
 
   # @!method get_or_create_by_canvas_id(user_id)
@@ -149,8 +169,9 @@ class Canvas::User
   #   Either way, returns a Canvas::User object.
   #   @param [Integer] sis_id the id of the user to find
   def self.get_or_create_by_sis_id(sis_id)
-    if Canvas::User.get_by_sis_id(sis_id)
-      user = Canvas::User.get_by_sis_id(sis_id)
+    user_query = Canvas::User.get_by_sis_id(sis_id)
+    if user_query.is_a? Canvas::User
+      user = user_query
       user.saved = true
       return user
     else
