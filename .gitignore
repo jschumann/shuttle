@@ -4,5 +4,7 @@
 models/
 service.rb
 update_canvas_users.rb
+update_canvas_logins.rb
 user_update_job.rb
+examples
 
