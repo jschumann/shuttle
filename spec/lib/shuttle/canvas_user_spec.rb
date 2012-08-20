@@ -5,46 +5,52 @@ describe Canvas::User do
   before(:each) do
   end
 
-  it "should create a new instance given valid options" do
-    FactoryGirl.build(:user)
-  end
+  describe "class" do
+    it "should create a new instance given valid options" do
+      FactoryGirl.build(:user)
+    end
 
-  it "should have a class method 'create'" do
-    Canvas::User.should respond_to(:create)
-  end
+    it "should create a new instance from a hash of options" do
+      pending
+    end
 
-  it "should have an class method 'edit'" do
-    Canvas::User.should respond_to(:edit)
-  end
+    it "should have a class method 'create'" do
+      Canvas::User.should respond_to(:create)
+    end
 
-  it "should have a class method 'delete'" do
-    Canvas::User.should respond_to(:delete)
-  end
+    it "should have an class method 'edit'" do
+      Canvas::User.should respond_to(:edit)
+    end
 
-  it "should have a class method 'all'" do
-    Canvas::User.should respond_to(:all)
-  end
+    it "should have a class method 'delete'" do
+      Canvas::User.should respond_to(:delete)
+    end
 
-  it "should have a class method 'get_by_canvas_id'" do
-    Canvas::User.should respond_to(:get_by_canvas_id)
-  end
+    it "should have a class method 'all'" do
+      Canvas::User.should respond_to(:all)
+    end
 
-  it "should have a class method 'get_by_sis_id'" do
-    Canvas::User.should respond_to(:get_by_sis_id)
-  end
+    it "should have a class method 'get_by_canvas_id'" do
+      Canvas::User.should respond_to(:get_by_canvas_id)
+    end
 
-  it "should have a class method 'get_or_create_by_canvas_id'" do
-    Canvas::User.should respond_to(:get_or_create_by_canvas_id)
-  end
+    it "should have a class method 'get_by_sis_id'" do
+      Canvas::User.should respond_to(:get_by_sis_id)
+    end
 
-  it "should have a class method 'get_or_create_by_sis_id'" do
-    Canvas::User.should respond_to(:get_or_create_by_sis_id)
+    it "should have a class method 'get_or_create_by_canvas_id'" do
+      Canvas::User.should respond_to(:get_or_create_by_canvas_id)
+    end
+
+    it "should have a class method 'get_or_create_by_sis_id'" do
+      Canvas::User.should respond_to(:get_or_create_by_sis_id)
+    end
   end
 
   describe "an instance" do
-    it "should have a canvas_id attribute" do
+    it "should have an id attribute" do
       @user = FactoryGirl.build(:user)
-      @user.should respond_to(:canvas_id)
+      @user.should respond_to(:id)
     end
 
     it "should have a name attribute" do
@@ -62,9 +68,9 @@ describe Canvas::User do
       @user.should respond_to(:sortable_name)
     end
 
-    it "should have an email attribute" do
+    it "should have a primary_email attribute" do
       @user = FactoryGirl.build(:user)
-      @user.should respond_to(:email)
+      @user.should respond_to(:primary_email)
     end
 
     it "should have a login_id attribute" do
@@ -160,6 +166,11 @@ describe Canvas::User do
     it "should have a list_user_page_views method" do
       @user = FactoryGirl.build(:user)
       @user.should respond_to(:list_user_page_views)
+    end
+
+    it "should have a saved? method" do
+      @user = FactoryGirl.build(:user)
+      @user.should respond_to('saved?')
     end
   end
 end

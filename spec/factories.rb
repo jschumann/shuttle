@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :request, class: Canvas::Request do
+  factory :request, class: Canvas::API::Request do
   end
 
   factory :account_authentication_service, class: Canvas::AccountAuthenticationService do

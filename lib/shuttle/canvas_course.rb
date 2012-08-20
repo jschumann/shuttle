@@ -7,6 +7,8 @@ class Canvas::Course
     end
   end
 
+  attr_accessor :saved
+
   # @!attribute id
   #   @return [Integer] Canvas's unique identifier for the course
   def id=(id)
@@ -206,6 +208,10 @@ class Canvas::Course
   # returned only if the current user has grading rights
   # and include[]=needs_grading_count
   # needs_grading_count: '17'
+
+  def saved?
+    return @saved
+  end
 
   def create
     api_method = "POST"

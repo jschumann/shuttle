@@ -5,8 +5,14 @@ describe Canvas::Course do
   before(:each) do
   end
 
-  it "should create a new instance given valid options" do
-    FactoryGirl.build(:course)
+  describe "class" do
+    it "should create a new instance given valid options" do
+      FactoryGirl.build(:course)
+    end
+
+    it "should create a new instance from a hash of options" do
+      pending
+    end
   end
 
   it "should have an id attribute" do
@@ -329,6 +335,11 @@ describe Canvas::Course do
   it "should return the offer attribute as a boolean" do
     @course = FactoryGirl.build(:course)
     @course.offer.should be_a_kind_of(Boolean)
+  end
+
+  it "should have a saved? method" do
+    @course = FactoryGirl.build(:course)
+    @course.should respond_to('saved?')
   end
 
   # optional: user-generated HTML for the course syllabus
