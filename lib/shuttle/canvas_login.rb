@@ -6,6 +6,13 @@ class Canvas::Login
   attr_accessor :id, :user_id, :unique_id, :sis_user_id
   attr_accessor :saved
 
+  def initialize(*args)
+    if args.length == 1 && args.first.kind_of?(Hash)
+      args.first.each { |k,v| send("#{k}=",v) }
+    end
+    @saved = false
+  end
+
   def saved?
     return @saved
   end
@@ -37,7 +44,7 @@ class Canvas::Login
     # TODO Validate our Canvas::Login object for fields below
     request = Canvas::API::Request.new
     request.method = 'PUT'
-    request.endpoint = "/api/v1/accounts/#{account_id}/logins/#{canvas_login.id}"
+    request.endpoint = "/api/v1/accounts/#{account_id}/logins/#{canvas_login.user_id}"
     request.body = {
       "login" => {
         # The new unique ID for the login.
@@ -45,7 +52,7 @@ class Canvas::Login
         # The new password for the login. Can only be set by an admin user if admins are allowed to change passwords for the account.
         # "password" => "#{canvas_login.password}",
         # SIS ID for the login. To set this parameter, the caller must be able to manage SIS permissions on the account.
-        "sis_user_id" => "#{canvas_login.sis_user_id}"
+        #"sis_user_id" => "#{canvas_login.sis_user_id}"
       }
     }.to_json
     response = request.fire!
@@ -83,19 +90,33 @@ class Canvas::Login
   end
 
   def self.get_all_by_user_id(user_id)
+    logins = Array.new
     request = Canvas::API::Request.new
     request.method = 'GET'
-    request.endpoint = "/api/v1/users/:user_id/logins"
+    request.endpoint = "/api/v1/users/#{user_id}/logins"
     response = request.fire!
-    return response
+    if response[0] == '200'
+       response[1].each do |response_part|
+         login = Canvas::Login.new(response_part)
+         login.saved = true
+         logins << login
+       end
+    end
+    return logins
   end
 
   def self.get_all_by_sis_user_id(sis_user_id)
+    logins = Array.new
     request = Canvas::API::Request.new
     request.method = 'GET'
-    request.endpoint = "/api/v1/users/sis_user_id:#{sis_id}/logins"
+    request.endpoint = "/api/v1/users/sis_user_id:#{sis_user_id}/logins"
     response = request.fire!
-    return response
+    if response[0] == '200'
+       response[1].each do |login|
+         logins << Canvas::Login.new(login)
+       end
+    end
+    return logins
   end
 
   def self.get_or_create_by_user_id_and_unique_id(user_id, unique_id)
