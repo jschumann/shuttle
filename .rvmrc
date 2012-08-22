@@ -1,1 +1,1 @@
-rvm --create use jruby-1.7.0.preview1@shuttle
+rvm --create use ruby-1.9.2-p318@shuttle
