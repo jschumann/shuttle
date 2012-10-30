@@ -1,0 +1,3 @@
+class Shuttle::ExternalTool
+end
+

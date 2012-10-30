@@ -1,0 +1,3 @@
+class Shuttle::Account
+end
+

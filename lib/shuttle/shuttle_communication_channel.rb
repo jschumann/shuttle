@@ -1,0 +1,3 @@
+class Shuttle::CommunicationChannel
+end
+
