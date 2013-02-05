@@ -1,4 +1,8 @@
 module Shuttle
+  require 'net/http'
+  require 'uri'
+  require 'json'
+
   require File.join(File.dirname(__FILE__), 'shuttle/shuttle_request')
   require File.join(File.dirname(__FILE__), 'shuttle/shuttle_account_authentication_service')
   require File.join(File.dirname(__FILE__), 'shuttle/shuttle_account_report')
