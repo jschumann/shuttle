@@ -1,3 +1,0 @@
-class Canvas::Group
-end
-

@@ -1,3 +1,0 @@
-class Canvas::Collection
-end
-

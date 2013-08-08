@@ -1,3 +1,0 @@
-class Canvas::Submission
-end
-
