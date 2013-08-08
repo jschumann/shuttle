@@ -1,0 +1,3 @@
+class Shuttle::SISImport
+end
+

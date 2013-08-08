@@ -1,0 +1,3 @@
+class Shuttle::Analytic
+end
+
